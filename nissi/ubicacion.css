@@ -1,0 +1,46 @@
+h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+}
+h2{
+    color: aliceblue;
+    text-align: left;
+}
+
+p{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #704242;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.box {
+    width: 45%;
+    height: 50%;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.box2 {
+    width: 45%;
+    height: 50%;
+    border: 1px solid #080404;
+    border-radius: 5px;
+    padding: 0.5%;
+}
+
+.negrita{
+    font-weight: bold;
+}

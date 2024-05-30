@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Servicio</title>
+    <!-- Incluir el archivo CSS de SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+
+    <!-- Incluir el archivo CSS -->
+    <link rel="stylesheet" href="formulario.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Formulario de Servicio</h1>
+        <form action="formulario.php" method="post" onsubmit="return mostrarConfirmacion()">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="nombres">Nombres Completos</label>
+                    <input type="text" class="form-control" id="nombres" name="nombres" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="correo" name="correo" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fecha_solicitud">Fecha de Solicitud</label>
+                    <input type="date" class="form-control" id="fecha_solicitud" name="fecha_solicitud" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="tipo_servicio">Tipo de Servicio</label>
+                    <input type="text" class="form-control" id="tipo_servicio" name="tipo_servicio" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comentario">Comentario</label>
+                <textarea class="form-control" id="comentario" name="comentario" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Incluir Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Incluir el archivo JavaScript de SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- Script para la alerta de confirmación -->
+    <script>
+        function mostrarConfirmacion() {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: '¿Estás seguro de que deseas enviar este formulario?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, enviar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Si se confirma, se envía el formulario
+                    return true;
+                } else {
+                    // Si se cancela, no se envía el formulario
+                    return false;
+                }
+            });
+            // Si se devuelve false, el formulario no se enviará
+            return false;
+        }
+    </script>
+</body>
+</html>
